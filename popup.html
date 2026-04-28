@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Extension Manifest Puller</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="header" aria-labelledby="title">
+        <div class="mark" aria-hidden="true">
+          <span>{}</span>
+        </div>
+        <div>
+          <h1 id="title">Manifest Puller</h1>
+          <p>Paste a Chrome Web Store link or extension ID.</p>
+        </div>
+      </section>
+
+      <form id="manifest-form" class="form">
+        <div class="field">
+          <label for="extension-input">Extension URL or ID</label>
+          <textarea
+            id="extension-input"
+            name="extension"
+            rows="4"
+            spellcheck="false"
+            autocomplete="off"
+            maxlength="2048"
+            placeholder="https://chromewebstore.google.com/detail/.../aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            required
+          ></textarea>
+        </div>
+
+        <button id="download-button" type="submit">
+          <span class="button-text">Extract manifest</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite">Ready</div>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

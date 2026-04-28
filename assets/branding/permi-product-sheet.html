@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Permi Product Sheet</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #111827;
+        --muted: #526070;
+        --paper: #ffffff;
+        --soft: #f4f8ff;
+        --cyan: #35cdf6;
+        --cyan-deep: #0676d8;
+        --pink: #ff4bc8;
+        --pink-deep: #cf148f;
+        --line: #d9e2ef;
+        --navy: #172034;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #eaf1fb;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.45;
+      }
+
+      .page {
+        width: min(100%, 960px);
+        min-height: 1240px;
+        margin: 0 auto;
+        background:
+          radial-gradient(circle at 16% 8%, rgba(53, 205, 246, 0.22), transparent 30%),
+          radial-gradient(circle at 88% 4%, rgba(255, 75, 200, 0.2), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, #f8fbff 50%, #ffffff 100%);
+        box-shadow: 0 24px 80px rgba(23, 32, 52, 0.18);
+        padding: 52px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 34px;
+        align-items: center;
+        padding-bottom: 34px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .logo {
+        display: block;
+        width: min(100%, 430px);
+        height: auto;
+        margin: 0 0 18px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--pink-deep);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 42px;
+        line-height: 1.04;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 610px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .summary-card {
+        border: 1px solid rgba(53, 205, 246, 0.42);
+        border-radius: 8px;
+        background: rgba(239, 252, 255, 0.9);
+        box-shadow: 0 18px 46px rgba(6, 118, 216, 0.14);
+        overflow: hidden;
+      }
+
+      .summary-top {
+        display: grid;
+        gap: 12px;
+        min-height: 150px;
+        padding: 28px 22px 24px;
+        background:
+          linear-gradient(135deg, rgba(123, 227, 251, 0.95), rgba(255, 139, 221, 0.95)),
+          #7be3fb;
+      }
+
+      .summary-top h2,
+      .panel h2,
+      .security h2 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0;
+      }
+
+      .summary-top p {
+        margin: 0;
+        color: rgba(17, 24, 39, 0.72);
+      }
+
+      .summary-top h2 {
+        color: var(--navy);
+      }
+
+      .steps {
+        display: grid;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        padding: 18px 20px;
+        border-top: 1px solid var(--line);
+      }
+
+      .number {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 50%;
+        color: #ffffff;
+        background: var(--pink);
+        font-weight: 850;
+      }
+
+      .steps strong {
+        display: block;
+        margin-bottom: 2px;
+        color: var(--navy);
+      }
+
+      .steps span {
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 30px;
+      }
+
+      .panel-wide {
+        grid-column: 1 / -1;
+        min-height: 170px;
+      }
+
+      .panel {
+        min-height: 215px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.86);
+        padding: 22px;
+      }
+
+      .panel h2 {
+        color: var(--navy);
+      }
+
+      .panel p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .feature-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        display: grid;
+        grid-template-columns: 11px 1fr;
+        gap: 9px;
+        color: var(--muted);
+      }
+
+      .feature-list li::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        margin-top: 7px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 0 3px rgba(53, 205, 246, 0.16);
+      }
+
+      .security {
+        margin-top: 24px;
+        border: 1px solid rgba(255, 75, 200, 0.32);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(255, 75, 200, 0.08), rgba(53, 205, 246, 0.1)),
+          #ffffff;
+        padding: 26px;
+      }
+
+      .security h2 {
+        color: var(--navy);
+      }
+
+      .security-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 24px;
+        margin-top: 18px;
+      }
+
+      .security-item {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 11px;
+      }
+
+      .icon {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--cyan), var(--pink));
+        font-size: 15px;
+        font-weight: 900;
+      }
+
+      .security-item strong {
+        display: block;
+        color: var(--navy);
+        font-size: 14px;
+      }
+
+      .security-item span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .footer strong {
+        color: var(--navy);
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .page {
+          width: 100%;
+          min-height: auto;
+          box-shadow: none;
+          padding: 34px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .page {
+          padding: 28px;
+        }
+
+        .hero,
+        .grid,
+        .security-grid,
+        .feature-list {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        .footer {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <img class="logo" src="permi-logo-v2.png" alt="Permi">
+          <p class="eyebrow">Chrome extension manifest review</p>
+          <h1>Understand extension permissions before install.</h1>
+          <p class="lead">
+            Permi helps reviewers, builders, and cautious users inspect a Chrome Web Store extension's
+            manifest file without installing the target extension first.
+          </p>
+        </div>
+
+        <aside class="summary-card" aria-label="How Permi works">
+          <div class="summary-top">
+            <h2>What it does</h2>
+            <p>Turns a Chrome Web Store URL or extension ID into a readable manifest JSON download.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="number">1</span>
+              <span><strong>Paste a listing</strong>Use a Chrome Web Store URL or a 32-character extension ID.</span>
+            </li>
+            <li>
+              <span class="number">2</span>
+              <span><strong>Fetch from Google</strong>Permi requests the extension package from Google's Chrome update service.</span>
+            </li>
+            <li>
+              <span class="number">3</span>
+              <span><strong>Extract locally</strong>The CRX is processed in memory, then only manifest.json is saved.</span>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section class="grid" aria-label="Product features">
+        <article class="panel">
+          <h2>Purpose</h2>
+          <p>
+            Browser extension permissions can be difficult to understand from a store listing alone.
+            Permi gives you the underlying manifest so you can inspect requested access before installing.
+          </p>
+        </article>
+
+        <article class="panel panel-wide">
+          <h2>Useful for</h2>
+          <ul class="feature-list">
+            <li>Checking requested permissions and host access.</li>
+            <li>Reviewing extension metadata before install.</li>
+            <li>Keeping a local manifest copy for audit notes.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Output</h2>
+          <p>
+            Permi saves a formatted <strong>manifest.json</strong> file through Chrome's downloads flow,
+            using a unique filename based on the target extension ID.
+          </p>
+        </article>
+      </section>
+
+      <section class="security" aria-label="Security and privacy">
+        <h2>Security and privacy posture</h2>
+        <div class="security-grid">
+          <div class="security-item">
+            <span class="icon">C</span>
+            <span><strong>Strict content security policy</strong>Extension pages default to blocking loads, then allow only local scripts, local styles, local images, and Google's CRX hosts.</span>
+          </div>
+          <div class="security-item">
+            <span class="icon">L</span>
+            <span><strong>Local scripts only</strong>No remote code, inline scripts, eval, or third-party runtime dependencies are used by the extension.</span>
+          </div>
+          <div class="security-item">
+            <span class="icon">P</span>
+            <span><strong>Narrow permissions</strong>The extension requests the downloads permission plus host access for Google's CRX update and delivery endpoints.</span>
+          </div>
+          <div class="security-item">
+            <span class="icon">I</span>
+            <span><strong>In-memory processing</strong>CRX bytes are streamed with size limits, parsed in the browser, and discarded after manifest extraction.</span>
+          </div>
+          <div class="security-item">
+            <span class="icon">V</span>
+            <span><strong>Input validation</strong>Permi accepts only HTTPS Chrome Web Store URLs or valid 32-character Chrome extension IDs before making a request.</span>
+          </div>
+          <div class="security-item">
+            <span class="icon">N</span>
+            <span><strong>No tracking or storage</strong>No analytics, cookies, accounts, advertising identifiers, or developer-controlled remote storage are used.</span>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <span><strong>Permi</strong> - Manifest permissions, made readable.</span>
+        <span>Created by CaidosCreek | Effective privacy date: April 28, 2026</span>
+      </footer>
+    </main>
+  </body>
+</html>

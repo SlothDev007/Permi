@@ -1,0 +1,29 @@
+.DS_Store
+Thumbs.db
+
+# Local environment and dependency folders
+.env
+.env.*
+!.env.example
+node_modules/
+vendor/
+
+# Logs and temporary output
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Chrome extension packaging artifacts
+*.crx
+*.pem
+*.zip
+
+# Python build/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
