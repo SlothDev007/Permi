@@ -1,11 +1,11 @@
-# Extension Manifest Puller
+# Premi
 
-A small Manifest V3 Chrome extension that extracts `manifest.json` from a Chrome Web Store extension package without installing the target extension.
+Premi is a lightweight Manifest V3 Chrome extension that lets you download a Chrome Web Store extension's `manifest.json` without installing the target extension, making it easier to review permissions, metadata, and security details.
 
 ## How it works
 
 1. Paste a Chrome Web Store URL or a 32-character Chrome extension ID.
-2. The extension requests the CRX from Google's Chrome update endpoint.
+2. Premi requests the CRX from Google's Chrome update endpoint.
 3. The CRX is held in memory only, `manifest.json` is extracted from the ZIP payload, and the CRX bytes are discarded.
 4. Chrome's downloads API saves the formatted manifest JSON.
 
