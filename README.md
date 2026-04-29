@@ -1,12 +1,12 @@
 <img width="1753" height="897" alt="image" src="https://github.com/user-attachments/assets/cb2dc549-e525-49cb-9868-ab9d95a0b418" />
-# Premi
+# Permi
 
-Premi is a lightweight Manifest V3 Chrome extension that lets you download a Chrome Web Store extension's `manifest.json` without installing the target extension, making it easier to review permissions, metadata, and security details.
+Permi is a lightweight Manifest V3 Chrome extension that lets you download a Chrome Web Store extension's `manifest.json` without installing the target extension, making it easier to review permissions, metadata, and security details.
 
 ## How it works
 
 1. Paste a Chrome Web Store URL or a 32-character Chrome extension ID.
-2. Premi requests the CRX from Google's Chrome update endpoint.
+2. Permi requests the CRX from Google's Chrome update endpoint.
 3. The CRX is held in memory only, `manifest.json` is extracted from the ZIP payload, and the CRX bytes are discarded.
 4. Chrome's downloads API saves the formatted manifest JSON.
 

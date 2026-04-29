@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Extension Manifest Puller",
+  "name": "Permi",
   "version": "0.1.0",
   "description": "Download the manifest.json from a Chrome Web Store extension without installing it.",
   "action": {
-    "default_title": "Extension Manifest Puller",
+    "default_title": "Permi",
     "default_popup": "popup.html"
   },
   "permissions": [
