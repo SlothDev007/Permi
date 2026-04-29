@@ -20,10 +20,17 @@ temp/
 *.pem
 *.zip
 
+# Removed branding/icon assets
+/assets/branding/permi-logo-chromakey.png
+/assets/branding/permi-logo.png
+/assets/branding/premi-logo-chromakey.png
+/assets/branding/premi-logo.png
+/assets/branding/build_product_sheet_pdf.py
+/icons/
+
 # Python build/cache artifacts
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
 venv/
-
