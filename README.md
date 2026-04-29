@@ -1,3 +1,4 @@
+<img width="1753" height="897" alt="image" src="https://github.com/user-attachments/assets/cb2dc549-e525-49cb-9868-ab9d95a0b418" />
 # Premi
 
 Premi is a lightweight Manifest V3 Chrome extension that lets you download a Chrome Web Store extension's `manifest.json` without installing the target extension, making it easier to review permissions, metadata, and security details.
